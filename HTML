@@ -1,0 +1,16 @@
+rom reportlab.platypus import SimpleDocTemplate, PageBreak
+from reportlab.graphics.shapes import Drawing, Rect, String, Line
+from reportlab.graphics import renderPDF
+
+file_path = "/mnt/data/campus_wireframe.pdf"
+doc = SimpleDocTemplate(file_path)
+
+def page_wireframe(title, sections):
+    # sections: list of tuples: (x, y, width, height, label)
+    d = Drawing(500, 700)
+    # page title
+    d.add(String(200, 660, title, fontSize=20))
+    for (x, y, w, h, label) in sections:
+        d.add(Rect(x, y, w, h, strokeWidth=1, fillColor=None))
+        d.add(String(x+5, y+h-15, label, fontSize=10))
+    return d

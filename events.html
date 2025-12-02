@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events - Campus Hub</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+    h1 { text-align: center; color: #333; }
+    .events-container { max-width: 800px; margin: 0 auto; }
+    .event-card { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .event-header { background: #4CAF50; color: white; cursor: pointer; padding: 15px; font-weight: bold; transition: background 0.3s; }
+    .event-header:hover { background: #45a049; }
+    .event-content { display: none; padding: 15px; background: #fff; }
+    .active .event-content { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .date { font-style: italic; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="events-container">
+    <h1>Upcoming Events</h1>
+    <div class="event-card">
+      <div class="event-header" onclick="toggleEvent(this)">Music Night Festival</div>
+      <div class="event-content">
+        <p>Join us for live music performances featuring local bands. <span class="date">Date: Friday, December 5, 2025 | Time: 7-10 PM</span></p>
+        <p>Location: Main Auditorium. Free entry, snacks provided.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-header" onclick="toggleEvent(this)">Holiday Workshop</div>
+      <div class="event-content">
+        <p>Craft holiday decorations with community artists. <span class="date">Date: Saturday, December 6, 2025 | Time: 2-5 PM</span></p>
+        <p>Location: Art Studio. Materials included, all ages welcome.</p>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-header" onclick="toggleEvent(this)">Guest Speaker Series</div>
+      <div class="event-content">
+        <p>Hear from industry experts on career development. <span class="date">Date: Monday, December 8, 2025 | Time: 6-8 PM</span></p>
+        <p>Location: Conference Room. RSVP required via email.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleEvent(header) {
+      const card = header.parentElement;
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

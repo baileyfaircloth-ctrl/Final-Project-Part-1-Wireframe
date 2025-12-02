@@ -39,3 +39,143 @@ section p {
         font-size: 1.3rem;
     }
 }
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 16px;
+}
+
+.site-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+nav {
+  margin-top: 8px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+nav li a {
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav li a:hover {
+  background-color: #1976d2;
+  color: #ffffff;
+}
+/* Generic card container could be used on all pages */
+.card,
+.event-card,
+.dining-card,
+.resource-card {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Headers for each card type */
+.card-header,
+.event-header,
+.dining-header,
+.resource-header {
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Accent colors per section */
+.event-header {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.event-header:hover {
+  background-color: #43a047;
+}
+
+.dining-header {
+  background-color: #ff9800;
+  color: #ffffff;
+}
+
+.dining-header:hover {
+  background-color: #fb8c00;
+}
+
+.resource-header {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+.resource-header:hover {
+  background-color: #1e88e5;
+}
+
+/* Card content (collapsed / expanded by JS) */
+.card-content,
+.event-content,
+.dining-content,
+.resource-content {
+  display: none;
+  padding: 14px 16px 16px;
+  background-color: #ffffff;
+}
+
+/* When the parent has .active applied by JS, show content */
+.active .card-content,
+.active .event-content,
+.active .dining-content,
+.active .resource-content {
+  display: block;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility text styles used in examples */
+.date,
+.hours,
+.availability {
+  font-style: italic;
+  color: #666666;
+}
+
+.contact {
+  font-weight: bold;
+  color: #1976d2;
+}
+
+/* Lists inside cards */
+.card-content ul,
+.event-content ul,
+.dining-content ul,
+.resource-content ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.card-content li,
+.event-content li,
+.dining-content li,
+.resource-content li {
+  margin-bottom: 4px;
+}

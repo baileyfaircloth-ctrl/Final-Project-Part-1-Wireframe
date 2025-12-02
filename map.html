@@ -30,3 +30,111 @@ story.append(page_wireframe("Dining Page", dining_sections))
 doc.build(story)
 
 file_path
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Campus Map</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific tweaks (optional, or move to style.css) */
+    .map-page-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    .map-wrapper {
+      margin-top: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    .map-legend {
+      margin-top: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #dddddd;
+      padding: 14px 16px;
+    }
+
+    .map-legend h2 {
+      margin-bottom: 10px;
+    }
+
+    .legend-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      margin-right: 8px;
+    }
+
+    .legend-color.events {
+      background-color: #4caf50;
+    }
+
+    .legend-color.dining {
+      background-color: #ff9800;
+    }
+
+    .legend-color.resources {
+      background-color: #2196f3;
+    }
+
+    @media (max-width: 768px) {
+      .map-wrapper iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="map-page-container">
+    <h1>Campus Map</h1>
+
+    <!-- Replace the src below with your actual campus address embed link -->
+    <div class="map-wrapper">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509366!2d144.95565161531856!3d-37.81732797975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577c3b0bf0c7a99!2sCampus!5e0!3m2!1sen!2sus!4v1700000000000"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="map-legend">
+      <h2>Legend</h2>
+      <ul class="legend-list">
+        <li class="legend-item">
+          <span class="legend-color events"></span>
+          <span>Events buildings and venues</span>
+        </li>
+        <li class="legend-item">
+          <span class="legend-color dining"></span>
+          <span>Dining halls, cafés, and food courts</span>
+        </li>
+        <li class="legend-item">
+          <span class="legend-color resources"></span>
+          <span>Libraries, tech help, and student services</span>
+        </li>
+      </ul>
+      <p>You can click and drag on the map, zoom in or out, and use the full-screen button to explore the campus area.</p>
+    </div>
+  </div>
+</body>
+</html>

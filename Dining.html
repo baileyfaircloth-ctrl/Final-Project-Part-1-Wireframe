@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dining - Campus Hub</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+    h1 { text-align: center; color: #333; }
+    .dining-container { max-width: 800px; margin: 0 auto; }
+    .dining-card { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .dining-header { background: #FF9800; color: white; cursor: pointer; padding: 15px; font-weight: bold; transition: background 0.3s; }
+    .dining-header:hover { background: #e68900; }
+    .dining-content { display: none; padding: 15px; background: #fff; }
+    .active .dining-content { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    ul { list-style-type: disc; padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <div class="dining-container">
+    <h1>Dining Options</h1>
+    <div class="dining-card">
+      <div class="dining-header" onclick="toggleDining(this)">Main Cafeteria</div>
+      <div class="dining-content">
+        <p>Open daily for breakfast, lunch, and dinner. <span class="hours">Hours: 7 AM - 9 PM</span></p>
+        <ul>
+          <li>Featured: Grilled chicken salad, pasta specials</li>
+          <li>Vegetarian options available</li>
+          <li>Meal plan accepted</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dining-card">
+      <div class="dining-header" onclick="toggleDining(this)">Vegan Bistro</div>
+      <div class="dining-content">
+        <p>Plant-based meals and smoothies. <span class="hours">Hours: 11 AM - 7 PM</span></p>
+        <ul>
+          <li>Featured: Quinoa bowls, fresh juices</li>
+          <li>Gluten-free and organic choices</li>
+          <li>Outdoor seating available</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dining-card">
+      <div class="dining-header" onclick="toggleDining(this)">Coffee Shop</div>
+      <div class="dining-content">
+        <p>Quick bites and beverages. <span class="hours">Hours: 8 AM - 6 PM</span></p>
+        <ul>
+          <li>Featured: Lattes, pastries, sandwiches</li>
+          <li>Student discounts on weekdays</li>
+          <li>Wi-Fi hotspot</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleDining(header) {
+      const card = header.parentElement;
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

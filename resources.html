@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resources - Campus Hub</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+    h1 { text-align: center; color: #333; }
+    .resources-container { max-width: 800px; margin: 0 auto; }
+    .resource-card { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .resource-header { background: #2196F3; color: white; cursor: pointer; padding: 15px; font-weight: bold; transition: background 0.3s; }
+    .resource-header:hover { background: #1976D2; }
+    .resource-content { display: none; padding: 15px; background: #fff; }
+    .active .resource-content { display: block; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .contact { font-weight: bold; color: #2196F3; }
+  </style>
+</head>
+<body>
+  <div class="resources-container">
+    <h1>Campus Resources</h1>
+    <div class="resource-card">
+      <div class="resource-header" onclick="toggleResource(this)">Library Services</div>
+      <div class="resource-content">
+        <p>Access books, databases, and study spaces. <span class="availability">Open: Mon-Sun 8 AM - 10 PM</span></p>
+        <p>Online catalog available 24/7. <span class="contact">Contact: library@campus.edu | Ext. 123</span></p>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-header" onclick="toggleResource(this)">Tech Support</div>
+      <div class="resource-content">
+        <p>Help with devices, software, and connectivity. <span class="availability">Hours: Mon-Fri 9 AM - 5 PM</span></p>
+        <p>Walk-in or virtual assistance. <span class="contact">Contact: techsupport@campus.edu | Ext. 456</span></p>
+      </div>
+    </div>
+    <div class="resource-card">
+      <div class="resource-header" onclick="toggleResource(this)">Counseling Center</div>
+      <div class="resource-content">
+        <p>Mental health support and advising. <span class="availability">Hours: Mon-Fri 10 AM - 6 PM</span></p>
+        <p>Confidential sessions by appointment. <span class="contact">Contact: counseling@campus.edu | Ext. 789</span></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleResource(header) {
+      const card = header.parentElement;
+      card.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
